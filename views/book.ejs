@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css"> 
+    <title><%= book.title %></title>
+</head>
+<body>
+    <%- include('sidebar.ejs') %>
+
+    <div class="main-content">
+        <h1><%= book.title %></h1>
+        <p><strong>Author:</strong> <%= book.author %></p>
+        <p><strong>Country:</strong> <%= book.country %></p>
+        <p><strong>Language:</strong> <%= book.language %></p>
+        <p><strong>Year:</strong> <%= book.year %></p>
+        <p><strong>Pages:</strong> <%= book.pages %></p>
+        <a href="<%= book.link %>">More info (🌐︎)</a>
+        <button class="delete-book" onclick="toggleConfirmation()"><strong>Delete</button>
+        <button class="update-book"><strong>Update</button>
+        <div id="deleteConfirmation" style="display: none;">
+            <p class="confirmation-text">Are you sure?</p>
+            <input type="password" id="admin-password" 
+            placeholder="Enter admin password">
+        </div>
+    </div>
+    <script>
+        document.querySelector('.update-book').addEventListener('click', function() {
+            // Get the book ID
+            const bookId = '<%= book._id %>';
+            // Redirect to the update book view
+            window.location.href = '/update-book?id=' + bookId;
+        });
+
+        function toggleConfirmation() {
+            var confirmationDiv = document.getElementById("deleteConfirmation");
+            if (confirmationDiv.style.display === "none") {
+                confirmationDiv.style.display = "block";
+            } else {
+                confirmationDiv.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+</html>

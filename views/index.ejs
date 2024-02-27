@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css"> 
+    <title>Bookstore Inventory</title>
+</head>
+<body>
+    <!-- Include the sidebar -->
+    <%- include('sidebar.ejs') %>
+    
+    <div class="main-content">
+        <% if (typeof category !== 'undefined') { %>
+        <h3><%= category.toUpperCase() %></h3>   
+        <span><%= otherBooks.length %> results found for '<%= category.toLowerCase() %>'</span>     
+        <ul>
+            <% otherBooks.forEach((book, index) => { %>
+                <li class="book-item">
+                    <a href="/book/<%= category.toLowerCase() %>/<%= index + 1 %>">
+                    <img src="/images/book.png" alt="Book Image" class="book-image">
+                    <p class="book-title"><%= book.title %> by <%= book.author %></p>
+                </a>
+                </li>
+            <% }); %>
+        </ul>
+        <% } else { %>
+            <h3>ALL BOOKS</h3>
+            <span><%= otherBooks.length %> total books</span>
+            <ul>
+                <% otherBooks.forEach((book, index) => { %>
+                    <li class="book-item">
+                        <a href="/book/<%= index + 1 %>">
+                        <img src="/images/book.png" alt="Book Image" class="book-image">
+                        <p class="book-title"><%= book.title %> by <%= book.author %></p>
+                    </a>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } %>
+    </div>
+    
+</body>
+</html>

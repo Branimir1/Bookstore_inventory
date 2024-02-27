@@ -1,0 +1,121 @@
+body {
+  display:flex; 
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar {
+  /* float: left; */
+  position: fixed;
+  left: 0;
+  width: 15%;
+  height: 100vh;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.categories, .languages ul {
+  list-style-type: none;
+  padding: 3px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 10px;
+  font-size: 20px;
+  margin-left: 20%; /* Adjusted to match the width of the sidebar */
+}
+
+.categories li, .languages li {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.sidebar button {
+  height: 35px;
+  margin-top: 50px;
+  max-width: 120px;
+}
+
+a {
+  color: #627278;
+}
+
+.book-item a {
+  text-decoration: none; /* Remove underline from the link */
+  color: #333; /* Set the text color */
+}
+
+.book-item {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  margin-bottom: 20px; /* Add some vertical spacing between items */
+}
+
+.book-title {
+  margin: 0; /* Remove default margin */
+  display: inline-block;
+  flex-grow: 1; /* Allow the title to grow and take up remaining space */
+}
+
+.book-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+
+
+input, select {
+  margin-bottom: 15px; /* Add spacing between input fields and button */
+  padding: 5px; /* Add padding to input fields */
+  width: 100%; /* Make input fields take full width */
+}
+
+.add-book-body {
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Center horizontally */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.add-book-body h1 {
+  margin-bottom: 20px;
+  text-align: left; /* Align heading to the left */
+}
+
+.add-book-body form {
+  width: 30%; 
+  font-size: medium;
+  padding-left: 20px;
+  margin-left: 20%;
+  padding: 20px;
+  text-align: left; /* Align form elements to the left */
+}
+
+.add-book-body .update-book {
+  margin-left: 22%;
+  margin-top: 10px;
+  padding: 5px;
+  width: 100px;
+}
+
+.main-content button {
+  width: 100px;
+  display: block;
+  margin-top: 20px
+}
+
+#admin-password {
+  width: 200px;
+}
+
+#confirmButton {
+  margin-left: 21%;
+  width: 150px; 
+}
+
+#updateConfirmation {
+  margin-left: 21%;
+  width: 300px; 
+}
